@@ -1,129 +1,123 @@
-<script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
-</script>
-
+<!-- svelte-ignore a11y-invalid-attribute -->
 <header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
-	</div>
-
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
 		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
+			<li><a href="/overview">Overview</a></li>
+			<li class="dropdown">
+				<a href="/price" class="dropbtn">Price</a>
+				<div class="dropdown-content">
+					<a href="/price/a">Price 1</a>
+					<a href="/price/b">Price 2</a>
+					<a href="/price/c">Price 3</a>
+				</div>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+			<li class="dropdown">
+				<a href="/orders" class="dropbtn">Orders</a>
+				<div class="dropdown-content">
+					<a href="/orders/a">Orders 1</a>
+					<a href="/orders/b">Orders 2</a>
+					<a href="/orders/c">Orders 3</a>
+				</div>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li class="dropdown">
+				<a href="/products" class="dropbtn">Products</a>
+				<div class="dropdown-content">
+					<a href="/products/a">Products 1</a>
+					<a href="/products/b">Products 2</a>
+					<a href="/products/c">Products 3</a>
+				</div>
 			</li>
+			<li class="dropdown">
+				<a href="/support" class="dropbtn">Support</a>
+				<div class="dropdown-content">
+					<a href="/support/a">Support 1</a>
+					<a href="/support/b">Support 2</a>
+					<a href="/support/c">Support 3</a>
+				</div>
+			</li>
+			<li><a href="/contact-us">Contact Us</a></li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
 	</nav>
-
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div>
 </header>
 
-<style>
+<style lang="scss">
 	header {
 		display: flex;
 		justify-content: space-between;
-	}
 
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
+		nav {
+			display: flex;
+			justify-content: center;
+			--background: rgba(255, 255, 255, 0.7);
+			width: 100%;
 
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
+			a {
+				display: flex;
+				height: 100%;
+				align-items: center;
+				padding: 0 0.5rem;
+				color: var(--color-text);
+				font-weight: 700;
+				font-size: 0.8rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				text-decoration: none;
+				transition: color 0.2s linear;
+			}
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
+			ul {
+				display: flex;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #38444d;
 
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
+				li {
+					float: left;
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
+					a, .dropbtn {
+						display: inline-block;
+						color: white;
+						text-align: center;
+						padding: 1rem;
+						text-decoration: none;
 
-	path {
-		fill: var(--background);
-	}
+						&:hover {
+							background-color: red;
+						}
+					}
 
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-	}
 
-	li {
-		position: relative;
-		height: 100%;
-	}
+					.dropdown-content {
+						display: none;
+						position: absolute;
+						background-color: #f9f9f9;
+						min-width: 160px;
+						box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+						z-index: 1;
+						top: 2.9rem;
 
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
+						a {
+							color: black;
+							padding: 12px 16px;
+							text-decoration: none;
+							display: block;
+							text-align: left;
+						}
 
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
+						a:hover {
+							background-color: #f1f1f1;
+						}
+					}
 
-	a:hover {
-		color: var(--color-theme-1);
+					&.dropdown:hover {
+						div.dropdown-content {
+							display: block;
+						}
+					}
+				}
+			}
+		}
 	}
 </style>
