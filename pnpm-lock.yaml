@@ -4,6 +4,8 @@ specifiers:
   '@sveltejs/adapter-vercel': ^1.0.0
   '@sveltejs/kit': ^1.0.0
   '@types/cookie': ^0.5.1
+  '@types/node': ^18.14.6
+  dotenv: ^16.0.3
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
@@ -21,6 +23,8 @@ devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0_@sveltejs+kit@1.0.0
   '@sveltejs/kit': 1.0.0_svelte@3.55.0+vite@4.0.1
   '@types/cookie': 0.5.1
+  '@types/node': 18.14.6
+  dotenv: 16.0.3
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0_eslint@8.29.0
   eslint-plugin-svelte3: 4.0.0_ffnabc34fed75fjymbd45uofx4
@@ -32,7 +36,7 @@ devDependencies:
   svelte-preprocess: 5.0.1_x24mykrq47sphattysnyytxjcy
   tslib: 2.5.0
   typescript: 4.9.4
-  vite: 4.0.1_sass@1.58.3
+  vite: 4.0.1_tbu6ibuzbmq2zng52hwcifltki
 
 packages:
 
@@ -374,7 +378,7 @@ packages:
       svelte: 3.55.0
       tiny-glob: 0.2.9
       undici: 5.14.0
-      vite: 4.0.1_sass@1.58.3
+      vite: 4.0.1_tbu6ibuzbmq2zng52hwcifltki
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -392,7 +396,7 @@ packages:
       magic-string: 0.27.0
       svelte: 3.55.0
       svelte-hmr: 0.15.1_svelte@3.55.0
-      vite: 4.0.1_sass@1.58.3
+      vite: 4.0.1_tbu6ibuzbmq2zng52hwcifltki
       vitefu: 0.2.3_vite@4.0.1
     transitivePeerDependencies:
       - supports-color
@@ -402,8 +406,8 @@ packages:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
     dev: true
 
-  /@types/node/18.11.15:
-    resolution: {integrity: sha512-VkhBbVo2+2oozlkdHXLrb3zjsRkpdnaU2bXmX8Wgle3PUi569eLRaHGlgETQHR7lLL1w7GiG3h9SnePhxNDecw==}
+  /@types/node/18.14.6:
+    resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==}
     dev: true
 
   /@types/pug/2.0.6:
@@ -413,7 +417,7 @@ packages:
   /@types/sass/1.43.1:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
-      '@types/node': 18.11.15
+      '@types/node': 18.14.6
     dev: true
 
   /@vercel/nft/0.22.5:
@@ -668,6 +672,11 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       esutils: 2.0.3
+    dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -1795,7 +1804,7 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /vite/4.0.1_sass@1.58.3:
+  /vite/4.0.1_tbu6ibuzbmq2zng52hwcifltki:
     resolution: {integrity: sha512-kZQPzbDau35iWOhy3CpkrRC7It+HIHtulAzBhMqzGHKRf/4+vmh8rPDDdv98SWQrFWo6//3ozwsRmwQIPZsK9g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1820,6 +1829,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.14.6
       esbuild: 0.16.6
       postcss: 8.4.20
       resolve: 1.22.1
@@ -1837,7 +1847,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.0.1_sass@1.58.3
+      vite: 4.0.1_tbu6ibuzbmq2zng52hwcifltki
     dev: true
 
   /webidl-conversions/3.0.1:
