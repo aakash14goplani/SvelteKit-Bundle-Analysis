@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-import dotenv from 'dotenv';
-dotenv.config();
+// import dotenv from 'dotenv';
+// dotenv.config();
 // sizes should be shared variable with Image component
 // import { sizes } from './theme.cjs';
 
