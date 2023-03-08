@@ -43,6 +43,12 @@
 				justify-content: center;
 				align-items: center;
 				flex: 0.6;
+
+				article {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+				}
 			}
 		}
 		
